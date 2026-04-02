@@ -73,14 +73,7 @@ const generateAPIResponse = async (incomingMessageDiv) => {
     const response = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: userMessage }],
-          },
-        ],
-      }),
+      body: JSON.stringify({ userMessage }),
     });
 
     if (!response.ok) {
